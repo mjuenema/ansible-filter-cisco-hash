@@ -18,7 +18,7 @@ script:
   - ansible-playbook -i tests/inventory tests/test.yml --connection=local
   - cat /tmp/ciscohash*
   - grep '^\$1\$' /tmp/ciscohash5 || exit 1
-    #  - [ `wc -c /tmp/ciscohash7 | awk '{ print $1 }'` -eq 19 ] && exit 1
+  - grep -e '[0-9A-F]{18}' /tmp/ciscohash7 || exit 1
   - grep 'NuLKvvWGg.x9HEKO' /tmp/ciscohashasa || exit 1
   - grep 'NuLKvvWGg.x9HEKO' /tmp/ciscohashpix || exit 1
   - grep 'A5XOy94YKDPXCo7U' /tmp/ciscohashasa_user || exit 1
