@@ -1,10 +1,12 @@
 # ansible-filter-cisco-hash
 
+**Warning: This is so new that it is currently untested.**
+
 Ansible Jinja2 filters for Cisco type 5 and type 7 password hashes.
 This requires the [passlib](https://pypi.python.org/pypi/passlib) Python library.
 
 * `{{password|ciscohash5}}` (see Note)
-* `{{password|ciscohash7}}
+* `{{password|ciscohash7}}`
 * `{{password|ciscohashpix}}`
 * `{{password|ciscohashpix(user)}}`
 * `{{password|ciscohashpasa}}`
@@ -14,6 +16,8 @@ This requires the [passlib](https://pypi.python.org/pypi/passlib) Python library
 add a *when* condition to the task as shown in the example below.*
 
 ## Usage
+
+**Warning: This is so new that it is currently untested.**
 
 The filters are wrapped into an Ansible role which can be installed directly
 from Github.
@@ -34,7 +38,6 @@ playbook the filters become available.
 
   vars:
     enable_password: my_enable_password
-    user_password: my_user_password
 
   roles:
     - ansible-filter-cisco-hash
@@ -43,12 +46,12 @@ playbook the filters become available.
     - name: Configure enable secret
       ios_config:
         lines: 
-        - "enable secret 5 {{enable_passowrd|ciscohash5}}" 
+        - "enable secret 5 {{enable_password|ciscohash5}}" 
       when: 'enable secret 5' not in ansible_net_config
 ```
 
 A big thanks goes to Jon Langemak for the [Creating your own Ansible filter
 plugins](http://www.dasblinkenlichten.com/creating-ansible-filter-plugins/)
-page. It flashed a bright light on the subject ;-)
+page.
 
 Markus J&uuml;nemann, May 2017
