@@ -1,6 +1,7 @@
 ---
 
 # https://www.jeffgeerling.com/blog/testing-ansible-roles-travis-ci-github
+# We don't need sudo here because we only create some files in /tmp
 
 sudo: no
 language: python
@@ -10,13 +11,12 @@ install:
   - pip install ansible passlib
 
 script:
-  - echo "[defaults]"            > ansible.cfg
-  - echo "roles_path=../roles/" >> ansible.cfg
-  - ansible-galaxy install -p roles/ -f git+https://github.com/mjuenema/ansible-filter-cisco-hash.git
+  - echo "[defaults]"      > ansible.cfg
+  - echo "roles_path=../" >> ansible.cfg
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
-  - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+  - ansible-playbook -i tests/inventory tests/test.yml --connection=local
   - >
-    ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+    ansible-playbook -i tests/inventory tests/test.yml --connection=local
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
