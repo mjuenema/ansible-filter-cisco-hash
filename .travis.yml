@@ -10,7 +10,7 @@ before_install:
 
 install:
   - pip install ansible passlib
-  - "printf '[defaults]\nroles_path = ../' > ansible.cfg"
+    #- "printf '[defaults]\nroles_path = ../' > ansible.cfg"
 
 script:
   - ansible-galaxy install -f git+https://github.com/mjuenema/ansible-filter-cisco-hash.git
