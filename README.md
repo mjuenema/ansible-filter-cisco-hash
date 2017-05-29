@@ -47,7 +47,7 @@ playbook the filters become available.
       when: 'enable secret 5' not in ansible_net_config
 ```
 
-A big thanks goes to Jon Langemak for the [Creating your own Ansible filter
+A big thanks goes to Jon Langemak for [Creating your own Ansible filter
 plugins](http://www.dasblinkenlichten.com/creating-ansible-filter-plugins/)
 page. It flashed a bright light on the subject ;-)
 
