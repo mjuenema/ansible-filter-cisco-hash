@@ -17,4 +17,4 @@ ios_config:
 
 A big thanks goes to Jon Langemak for the [Creating your own Ansible filter plugins](http://www.dasblinkenlichten.com/creating-ansible-filter-plugins/) page. It flashed a bright light on the subject ;-)
 
-Markus Juenemann, May 2017
+Markus J&uuml;nemann, May 2017
