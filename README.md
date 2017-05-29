@@ -1,3 +1,5 @@
+![Travis-CI status for master branch](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash.svg?branch=master)
+
 # ansible-filter-cisco-hash
 
 **Warning: This is so new that it is currently untested.**
