@@ -1,14 +1,14 @@
 ---
+
 - hosts: localhost
   remote_user: root
   roles:
     - ansible-filter-cisco-hash
-
   vars:
     user: user
     password: password
-
   tasks:
-    template:
-      src: ciscohash5.j2
-      dst: /tmp/ciscohash5
+    - name: Cisco Hash 5
+      template:
+        src: ciscohash5.j2
+        dst: /tmp/ciscohash5
