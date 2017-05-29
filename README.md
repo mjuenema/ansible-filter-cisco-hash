@@ -15,6 +15,8 @@ add a *when* condition to the task as shown in the example below.*
 
 ## Usage
 
+**Warning: This is so new that it is currently untested.**
+
 The filters are wrapped into an Ansible role which can be installed directly
 from Github.
 
@@ -42,7 +44,7 @@ playbook the filters become available.
     - name: Configure enable secret
       ios_config:
         lines: 
-        - "enable secret 5 {{my_enable_password|ciscohash5}}" 
+        - "enable secret 5 {{enable_password|ciscohash5}}" 
       when: 'enable secret 5' not in ansible_net_config
 ```
 
