@@ -1,0 +1,16 @@
+galaxy_info:
+  author: mjuenema
+  description: Jinja2 Cisco password hash filters
+  license: BSD
+  min_ansible_version: 2.0
+  galaxy_tags:
+  - plugin
+  - filter
+  - cisco
+  - hash
+  - password
+  - ios
+  - asa
+  - pix
+  - jinja2
+dependencies: []
