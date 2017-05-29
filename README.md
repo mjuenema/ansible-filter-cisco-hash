@@ -4,7 +4,7 @@ Ansible Jinja2 filters for Cisco type 5 and type 7 password hashes.
 This requires the [passlib](https://pypi.python.org/pypi/passlib) Python library.
 
 * `{{password|ciscohash5}}` (see Note)
-* `{{password|ciscohash7}}
+* `{{password|ciscohash7}}`
 * `{{password|ciscohashpix}}`
 * `{{password|ciscohashpix(user)}}`
 * `{{password|ciscohashpasa}}`
