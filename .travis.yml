@@ -7,8 +7,16 @@ sudo: no
 language: python
 python: "2.7"
 
+env:
+  global:
+  matrix:
+    - ANSIBLE_VERSION="2.0.0.2"
+    - ANSIBLE_VERSION="2.1.4.0"
+    - ANSIBLE_VERSION="2.2.3.0"
+    - ANSIBLE_VERSION="2.3.0.0"
+
 install:
-  - pip install ansible passlib ansible-lint
+  - pip install ansible==$ANSIBLE_VERSION passlib ansible-lint
 
 script:
   - echo "[defaults]"      > ansible.cfg
