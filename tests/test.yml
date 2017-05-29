@@ -16,3 +16,28 @@
       template:
         src: ciscohash5.j2
         dest: /tmp/ciscohash5
+
+    - name: Cisco Hash 7
+      template:
+        src: ciscohash7.j2
+        dest: /tmp/ciscohash7
+
+    - name: Cisco Hash ASA
+      template:
+        src: ciscohashasa.j2
+        dest: /tmp/ciscohashasa
+
+    - name: Cisco Hash ASA User
+      template:
+        src: ciscohashasa_user.j2
+        dest: /tmp/ciscohashasa_user
+
+    - name: Cisco Hash PIX
+      template:
+        src: ciscohashpix.j2
+        dest: /tmp/ciscohashpix
+
+    - name: Cisco Hash PIX User
+      template:
+        src: ciscohashpix_user.j2
+        dest: /tmp/ciscohashpix_user

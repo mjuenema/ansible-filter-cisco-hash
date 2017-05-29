@@ -16,9 +16,10 @@ script:
   - ansible-lint tests/test.yml
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
   - ansible-playbook -i tests/inventory tests/test.yml --connection=local
-  - >
-    ansible-playbook -i tests/inventory tests/test.yml --connection=local
-    | grep -q 'changed=0.*failed=0'
-    && (echo 'Idempotence test: pass' && exit 0)
-    || (echo 'Idempotence test: fail' && exit 1)
-  - cat /tmp/ciscohash5
+  - cat /tmp/ciscohash*
+  - grep '^\$1\$' /tmp/ciscohash5 && exit 1
+  - [ `wc -c /tmp/ciscohash7 | awk '{ print $1 }'` -eq 19 ] && exit 1
+  - grep 'NuLKvvWGg.x9HEKO' /tmp/ciscohashasa && exit 1
+  - grep 'NuLKvvWGg.x9HEKO' /tmp/ciscohashpix && exit 1
+  - grep 'A5XOy94YKDPXCo7U' /tmp/ciscohashasa_user && exit 1
+  - grep 'A5XOy94YKDPXCo7U' /tmp/ciscohashpix_user && exit 1
