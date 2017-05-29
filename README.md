@@ -15,4 +15,6 @@ ios_config:
   - "user my_username password 7 {{user_password|ciscohash7}}"
 ```
 
+A big thanks goes to Jon Langemak for the [Creating your own Ansible filter plugins](http://www.dasblinkenlichten.com/creating-ansible-filter-plugins/) page. It flashed a bright light on the subject ;-)
+
 Markus Juenemann, May 2017
