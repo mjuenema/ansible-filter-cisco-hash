@@ -41,5 +41,5 @@ script:
   - grep '[0-9A-F]' /tmp/ciscohash7 || exit 1
   - grep 'NuLKvvWGg.x9HEKO' /tmp/ciscohashasa || exit 1
   - grep 'NuLKvvWGg.x9HEKO' /tmp/ciscohashpix || exit 1
-  - [ $TEST_ASA -eq 0 ] || grep 'A5XOy94YKDPXCo7U' /tmp/ciscohashasa_user || exit 1
-  - [ $TEST_ASA -eq 0 ] || grep 'A5XOy94YKDPXCo7U' /tmp/ciscohashpix_user || exit 1
+  - test $TEST_ASA -eq 0 || grep 'A5XOy94YKDPXCo7U' /tmp/ciscohashasa_user || exit 1
+  - test $TEST_ASA -eq 0 || grep 'A5XOy94YKDPXCo7U' /tmp/ciscohashpix_user || exit 1
