@@ -17,7 +17,7 @@ This requires the [Passlib](https://pypi.python.org/pypi/passlib) Python library
 *Note: Because the hash will be different at each invocation one has to
 add a *when* condition to the task as shown in the example below.*
 
-The filter plugin works with Ansible 2.0 and later and Passlib versions 1.4 and later.
+The filter plugin works with Ansible 2.0+ and Passlib 1.6+.
 
 ## Usage
 
