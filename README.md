@@ -1,25 +1,26 @@
-![Travis-CI status for master branch](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash.svg?branch=master)
+[![Travis master branch](https://img.shields.io/travis/mjuenema/ansible-filter-cisco-hash/master.svg?style=flat-square)](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash/branches)
+[![Travis develop branch](https://img.shields.io/travis/mjuenema/ansible-filter-cisco-hash/develop.svg?style=flat-square)](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash/branches)
+[![GitHub release](https://img.shields.io/github/release/mjuenema/ansible-plugin-cisco-hash.svg?style=flat-square)](https://github.com/mjuenema/ansible-filter-cisco-hash)
+
 
 # ansible-filter-cisco-hash
 
-**Warning: This is so new that it is currently untested.**
-
 Ansible Jinja2 filters for Cisco type 5 and type 7 password hashes.
-This requires the [passlib](https://pypi.python.org/pypi/passlib) Python library.
+This requires the [Passlib](https://pypi.python.org/pypi/passlib) Python library.
 
 * `{{password|ciscohash5}}` (see Note)
 * `{{password|ciscohash7}}`
 * `{{password|ciscohashpix}}`
 * `{{password|ciscohashpix(user)}}`
-* `{{password|ciscohashpasa}}`
-* `{{password|ciscohashasa(user)}}`
+* `{{password|ciscohashpasa}}` (only with Passlib 1.7 or later)
+* `{{password|ciscohashasa(user)}}` (only with Passlib 1.7 or later)
 
-*Note: Because the hash will be different at each invocation one has
+*Note: Because the hash will be different at each invocation one has to
 add a *when* condition to the task as shown in the example below.*
 
-## Usage
+The filter plugin works with Ansible 2.0+ and Passlib 1.6+.
 
-**Warning: This is so new that it is currently untested.**
+## Usage
 
 The filters are wrapped into an Ansible role which can be installed directly
 from Github.
@@ -47,8 +48,8 @@ playbook the filters become available.
   tasks:
     - name: Configure enable secret
       ios_config:
-        lines: 
-        - "enable secret 5 {{enable_password|ciscohash5}}" 
+        lines:
+        - "enable secret 5 {{enable_password|ciscohash5}}"
       when: 'enable secret 5' not in ansible_net_config
 ```
 
