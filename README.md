@@ -1,8 +1,7 @@
-![Travis-CI status for master branch](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash.svg?branch=master)
+**Master branch** ![Travis-CI status for master branch](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash.svg?branch=master)
+**Develop branch** ![Travis-CI status for develop branch](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash.svg?branch=develop)
 
 # ansible-filter-cisco-hash
-
-**Warning: This is so new that it is currently untested.**
 
 Ansible Jinja2 filters for Cisco type 5 and type 7 password hashes.
 This requires the [passlib](https://pypi.python.org/pypi/passlib) Python library.
