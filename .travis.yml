@@ -10,10 +10,10 @@ python: "2.7"
 env:
   global:
   matrix:
-    - ANSIBLE_VERSION="2.0.0.2"  PASSLIB_VERSION="1.7.1"
-    - ANSIBLE_VERSION="2.1.4.0"  PASSLIB_VERSION="1.7.1"
-    - ANSIBLE_VERSION="2.2.3.0"  PASSLIB_VERSION="1.7.1"
-    - ANSIBLE_VERSION="2.3.0.0"  PASSLIB_VERSION="1.7.1"
+    - ANSIBLE_VERSION="2.0.0.2"  PASSLIB_VERSION="1.7.1"  TEST_ASA=1
+    - ANSIBLE_VERSION="2.1.4.0"  PASSLIB_VERSION="1.7.1"  TEST_ASA=1
+    - ANSIBLE_VERSION="2.2.3.0"  PASSLIB_VERSION="1.7.1"  TEST_ASA=1
+    - ANSIBLE_VERSION="2.3.0.0"  PASSLIB_VERSION="1.7.1"  TEST_ASA=1
     - ANSIBLE_VERSION="2.0.0.2"  PASSLIB_VERSION="1.6.2"
     - ANSIBLE_VERSION="2.1.4.0"  PASSLIB_VERSION="1.6.2"
     - ANSIBLE_VERSION="2.2.3.0"  PASSLIB_VERSION="1.6.2"
@@ -34,8 +34,8 @@ script:
   - echo "[defaults]"      > ansible.cfg
   - echo "roles_path=../" >> ansible.cfg
   - ansible-lint tests/test.yml
-  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
-  - ansible-playbook -i tests/inventory tests/test.yml --connection=local
+  - ansible-playbook -i tests/inventory tests/test.yml -e "TEST_ASA=$TEST_ASA" --syntax-check
+  - ansible-playbook -i tests/inventory tests/test.yml -e "TEST_ASA=$TEST_ASA" --connection=local
   - cat /tmp/ciscohash*
   - grep '^\$1\$' /tmp/ciscohash5 || exit 1
   - grep '[0-9A-F]' /tmp/ciscohash7 || exit 1

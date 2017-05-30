@@ -10,13 +10,13 @@ This requires the [Passlib](https://pypi.python.org/pypi/passlib) Python library
 * `{{password|ciscohash7}}`
 * `{{password|ciscohashpix}}`
 * `{{password|ciscohashpix(user)}}`
-* `{{password|ciscohashpasa}}`
-* `{{password|ciscohashasa(user)}}`
+* `{{password|ciscohashpasa}}` (only with Passlib 1.7 or later)
+* `{{password|ciscohashasa(user)}}` (only with Passlib 1.7 or later)
 
 *Note: Because the hash will be different at each invocation one has to
 add a *when* condition to the task as shown in the example below.*
 
-The filter plugin works with Ansible 2.0 and later and Passlib versions
+The filter plugin works with Ansible 2.0 and later and Passlib versions XXXXXXXXX.
 
 ## Usage
 
