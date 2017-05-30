@@ -4,7 +4,7 @@
 # ansible-filter-cisco-hash
 
 Ansible Jinja2 filters for Cisco type 5 and type 7 password hashes.
-This requires the [passlib](https://pypi.python.org/pypi/passlib) Python library.
+This requires the [Passlib](https://pypi.python.org/pypi/passlib) Python library.
 
 * `{{password|ciscohash5}}` (see Note)
 * `{{password|ciscohash7}}`
@@ -13,12 +13,12 @@ This requires the [passlib](https://pypi.python.org/pypi/passlib) Python library
 * `{{password|ciscohashpasa}}`
 * `{{password|ciscohashasa(user)}}`
 
-*Note: Because the hash will be different at each invocation one has
+*Note: Because the hash will be different at each invocation one has to
 add a *when* condition to the task as shown in the example below.*
 
-## Usage
+The filter plugin works with Ansible 2.0 and later and Passlib versions
 
-**Warning: This is so new that it is currently untested.**
+## Usage
 
 The filters are wrapped into an Ansible role which can be installed directly
 from Github.
