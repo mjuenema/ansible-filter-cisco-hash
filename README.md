@@ -1,5 +1,6 @@
-**Master branch** ![Travis-CI status for master branch](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash.svg?branch=master)
-**Develop branch** ![Travis-CI status for develop branch](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash.svg?branch=develop)
+[![Travis master branch](https://img.shields.io/travis/mjuenema/ansible-filter-cisco-hash/master.svg?style=flat-square)](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash/branches)
+[![Travis develop branch](https://img.shields.io/travis/mjuenema/ansible-filter-cisco-hash/develop.svg?style=flat-square)](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash/branches)
+
 
 # ansible-filter-cisco-hash
 
@@ -46,8 +47,8 @@ playbook the filters become available.
   tasks:
     - name: Configure enable secret
       ios_config:
-        lines: 
-        - "enable secret 5 {{enable_password|ciscohash5}}" 
+        lines:
+        - "enable secret 5 {{enable_password|ciscohash5}}"
       when: 'enable secret 5' not in ansible_net_config
 ```
 
