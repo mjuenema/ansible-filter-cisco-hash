@@ -26,14 +26,14 @@
       template:
         src: ciscohashasa.j2
         dest: /tmp/ciscohashasa
-      when: TEST_ASA is defined and TEST_ASA == 1
+      when: TEST_ASA is defined and TEST_ASA == "1"
       # Works only with Passlib >= 1.7
 
     - name: Cisco Hash ASA User
       template:
         src: ciscohashasa_user.j2
         dest: /tmp/ciscohashasa_user
-      when: TEST_ASA is defined and TEST_ASA == 1
+      when: TEST_ASA is defined and TEST_ASA == "1"
       # Works only with Passlib >= 1.7
 
     - name: Cisco Hash PIX
