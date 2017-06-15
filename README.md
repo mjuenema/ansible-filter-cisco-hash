@@ -1,6 +1,6 @@
 [![Travis master branch](https://img.shields.io/travis/mjuenema/ansible-filter-cisco-hash/master.svg?style=flat-square)](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash/branches)
 [![Travis develop branch](https://img.shields.io/travis/mjuenema/ansible-filter-cisco-hash/develop.svg?style=flat-square)](https://travis-ci.org/mjuenema/ansible-filter-cisco-hash/branches)
-[![GitHub release](https://img.shields.io/github/release/mjuenema/ansible-plugin-cisco-hash.svg?style=flat-square)](https://github.com/mjuenema/ansible-filter-cisco-hash)
+[![GitHub release](https://img.shields.io/github/release/mjuenema/ansible-plugin-cisco-hash.svg?style=flat-square)](https://github.com/mjuenema/ansible-filter-cisco-hash/releases)
 
 
 # ansible-filter-cisco-hash
