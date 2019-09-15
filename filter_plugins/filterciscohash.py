@@ -31,12 +31,18 @@ class FilterModule(object):
         else:
             return passlib.hash.md5_crypt.encrypt(password, salt_size=4)
 
-    def ciscohash7(self, password):
+    def ciscohash7(self, password, salt=''):
         """https://passlib.readthedocs.io/en/stable/lib/passlib.hash.cisco_type7.html"""
-        if PASSLIB_VERSION >= PASSLIB_API_CHANGE_VERSION:
-            return passlib.hash.cisco_type7.hash(password)
+        if salt != '':
+            if PASSLIB_VERSION >= PASSLIB_API_CHANGE_VERSION:
+                return passlib.hash.cisco_type7.using(salt=salt).hash(password)
+            else:
+                return passlib.hash.cisco_type7.using(salt=salt).encrypt(password)
         else:
-            return passlib.hash.cisco_type7.encrypt(password)
+            if PASSLIB_VERSION >= PASSLIB_API_CHANGE_VERSION:
+                return passlib.hash.cisco_type7.hash(password)
+            else:
+                return passlib.hash.cisco_type7.encrypt(password)
 
     def ciscohashpix(self, password, user=''):
         """https://passlib.readthedocs.io/en/stable/lib/passlib.hash.cisco_pix.html"""
