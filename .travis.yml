@@ -29,12 +29,11 @@ env:
 
 install:
   - pip install --upgrade pip setuptools packaging
-  - pip install ansible==$ANSIBLE_VERSION passlib==$PASSLIB_VERSION ansible-lint
+  - pip install ansible==$ANSIBLE_VERSION passlib==$PASSLIB_VERSION
 
 script:
   - echo "[defaults]"      > ansible.cfg
   - echo "roles_path=../" >> ansible.cfg
-  - ansible-lint tests/test.yml
   - ansible-playbook -i tests/inventory tests/test.yml -e "TEST_ASA=$TEST_ASA" --syntax-check
   - ansible-playbook -i tests/inventory tests/test.yml -e "TEST_ASA=$TEST_ASA" -vvvv --connection=local
   - cat /tmp/ciscohash*
