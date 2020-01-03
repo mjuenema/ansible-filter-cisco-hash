@@ -58,7 +58,7 @@ playbook the filters become available.
 * A big thanks goes to Jon Langemak for the [Creating your own Ansible filter
   plugins](http://www.dasblinkenlichten.com/creating-ansible-filter-plugins/)
   page.
-* Marco Grigull add the option to allow setting of salt for cisco7 encoding. 
+* Marco Grigull added the option to allow setting of salt for cisco7 encoding. 
 
 
 Markus J&uuml;nemann, May 2017
